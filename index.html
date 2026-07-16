@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Knowledgeable4u</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a2e;background:#f8fafc}
+    header{background:#0f172a;padding:20px 40px;display:flex;align-items:center;gap:16px}
+    header img{width:48px;height:48px;border-radius:50%}
+    header h1{color:#fff;font-size:1.6rem;font-weight:700;letter-spacing:-0.5px}
+    nav{margin-left:auto;display:flex;gap:24px}
+    nav a{color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color .2s}
+    nav a:hover{color:#10B981}
+    .hero{background:linear-gradient(135deg,#0f172a 0%,#1e293b 60%,#134e3c 100%);color:#fff;padding:80px 40px;text-align:center}
+    .hero .icon{width:96px;height:96px;margin:0 auto 24px;border-radius:50%;background:#10B981;display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:700;color:#fff}
+    .hero h2{font-size:2.4rem;font-weight:700;margin-bottom:16px;letter-spacing:-1px}
+    .hero p{font-size:1.1rem;color:#94a3b8;max-width:600px;margin:0 auto;line-height:1.7}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;padding:60px 40px;max-width:1100px;margin:0 auto}
+    .card{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,.08);border:1px solid #e2e8f0}
+    .card .icon{font-size:2rem;margin-bottom:12px}
+    .card h3{font-size:1.1rem;font-weight:600;margin-bottom:8px;color:#0f172a}
+    .card p{font-size:0.9rem;color:#64748b;line-height:1.6}
+    .about{background:#fff;padding:60px 40px;border-top:1px solid #e2e8f0}
+    .about-inner{max-width:800px;margin:0 auto}
+    .about h2{font-size:1.8rem;font-weight:700;margin-bottom:16px;color:#0f172a}
+    .about p{font-size:1rem;color:#475569;line-height:1.8;margin-bottom:12px}
+    footer{background:#0f172a;color:#94a3b8;padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    footer a{color:#94a3b8;text-decoration:none;margin-left:20px;font-size:0.875rem;transition:color .2s}
+    footer a:hover{color:#10B981}
+    @media(max-width:600px){
+      .hero h2{font-size:1.6rem}
+      header{flex-wrap:wrap}
+      nav{margin-left:0}
+      footer{flex-direction:column;text-align:center}
+      footer a{margin:4px 10px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="icon.svg" alt="Knowledgeable4u icon"/>
+  <h1>Knowledgeable4u</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-service.html">Terms of Service</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="icon">K</div>
+  <h2>Science. Simplified. Every Day.</h2>
+  <p>Knowledgeable4u delivers science-backed health and biotech discoveries in under 60 seconds — neuroscience, longevity, nutrition, sleep science, and biohacking distilled into daily short-form videos.</p>
+</section>
+
+<section class="features">
+  <div class="card">
+    <div class="icon">🧬</div>
+    <h3>Biotech & Biohacking</h3>
+    <p>Stay ahead of the latest research in human performance, genetic science, and cutting-edge health technology.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🧠</div>
+    <h3>Neuroscience</h3>
+    <p>Evidence-based insights on brain health, cognitive performance, memory, and mental clarity from peer-reviewed studies.</p>
+  </div>
+  <div class="card">
+    <div class="icon">⏱️</div>
+    <h3>Longevity</h3>
+    <p>Explore the science of aging, cellular health, and the habits proven to extend healthspan and lifespan.</p>
+  </div>
+  <div class="card">
+    <div class="icon">🥗</div>
+    <h3>Nutrition Science</h3>
+    <p>Cut through nutrition myths with data-driven breakdowns of what actually works — backed by clinical research.</p>
+  </div>
+  <div class="card">
+    <div class="icon">😴</div>
+    <h3>Sleep Science</h3>
+    <p>Understand the mechanisms of sleep, circadian rhythm, and how quality rest drives every health outcome.</p>
+  </div>
+  <div class="card">
+    <div class="icon">📊</div>
+    <h3>Content Publishing Tool</h3>
+    <p>Knowledgeable4u uses the TikTok Content Posting API to distribute science education videos to our audience on TikTok.</p>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-inner">
+    <h2>About Knowledgeable4u</h2>
+    <p>Knowledgeable4u is a science education content platform focused on making complex health and biotech research accessible to everyone. We publish daily short-form videos across multiple platforms including TikTok, YouTube, Instagram, and Facebook.</p>
+    <p>Our content is researched, scripted, and published using automated tools that integrate with official platform APIs — including the TikTok Content Posting API — to ensure consistent, timely delivery of educational content to our audience.</p>
+    <p>We are committed to responsible use of platform APIs in accordance with each platform's terms of service and developer policies.</p>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Knowledgeable4u. All rights reserved.</span>
+  <div>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-service.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Knowledgeable4u - Authorization</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#0f172a;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+    .card{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:40px;max-width:600px;width:100%;text-align:center}
+    .icon{width:72px;height:72px;border-radius:50%;background:#10B981;display:flex;align-items:center;justify-content:center;font-size:2.2rem;font-weight:700;margin:0 auto 20px}
+    h1{font-size:1.6rem;margin-bottom:8px}
+    .subtitle{color:#94a3b8;margin-bottom:28px;font-size:0.95rem}
+    .status{padding:14px 20px;border-radius:10px;margin-bottom:20px;font-size:0.95rem;font-weight:600}
+    .status.success{background:#064e3b;border:1px solid #10B981;color:#34d399}
+    .status.error{background:#450a0a;border:1px solid #ef4444;color:#f87171}
+    .url-box{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:14px;text-align:left;margin-bottom:20px;word-break:break-all;font-size:0.8rem;color:#94a3b8;font-family:monospace;line-height:1.6}
+    .url-box .label{font-size:0.75rem;color:#64748b;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;font-family:'Segoe UI',sans-serif;font-weight:600}
+    .copy-btn{background:#10B981;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:0.95rem;font-weight:600;cursor:pointer;width:100%;transition:background .2s}
+    .copy-btn:hover{background:#059669}
+    .copy-btn.copied{background:#064e3b;color:#34d399}
+    .instructions{margin-top:24px;padding:16px;background:#0f172a;border-radius:8px;text-align:left;font-size:0.85rem;color:#64748b;line-height:1.7}
+    .instructions b{color:#94a3b8}
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">K</div>
+  <h1>Knowledgeable4u</h1>
+  <p class="subtitle">TikTok Authorization Callback</p>
+
+  <div id="status" class="status success">✓ Authorization code received</div>
+
+  <div class="url-box">
+    <div class="label">Full callback URL (copy this to your terminal)</div>
+    <div id="full-url"></div>
+  </div>
+
+  <button class="copy-btn" id="copy-btn" onclick="copyUrl()">Copy Full URL</button>
+
+  <div class="instructions">
+    <b>Next step:</b> Go back to your PowerShell terminal where <code>python tiktok_upload.py bootstrap</code> is running and paste this URL when prompted.
+  </div>
+</div>
+
+<script>
+  const url = window.location.href;
+  document.getElementById('full-url').textContent = url;
+
+  const params = new URLSearchParams(window.location.search);
+  if (!params.get('code')) {
+    document.getElementById('status').className = 'status error';
+    document.getElementById('status').textContent = '✗ No authorization code found in URL';
+  }
+
+  function copyUrl() {
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied!';
+      btn.className = 'copy-btn copied';
+      setTimeout(() => {
+        btn.textContent = 'Copy Full URL';
+        btn.className = 'copy-btn';
+      }, 2500);
+    });
+  }
+</script>
+</body>
+</html>
